@@ -7,23 +7,22 @@ trap "" HUP
 #   exit 1
 #fi
 
-#MR_EXAMPLES_JAR=/usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-mapreduce-examples.jar
-MR_EXAMPLES_JAR=/usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar
+MR_EXAMPLES_JAR=/opt/cloudera/parcels/CDH/jars/hadoop-mapreduce-examples-2.6.0-cdh5.15.3-SNAPSHOT.jar
 
-#SIZE=500G
-#ROWS=5000000000
+# SIZE=1T
+# ROWS=10000000000
 
-#SIZE=100G
-#ROWS=1000000000
+# SIZE=500G
+# ROWS=5000000000
 
- SIZE=1T
- ROWS=10000000000
+# SIZE=100G
+# ROWS=1000000000
 
 # SIZE=10G
 # ROWS=100000000
 
-# SIZE=1G
-# ROWS=10000000
+SIZE=1G
+ROWS=10000000
 
 
 LOGDIR=logs
@@ -38,7 +37,7 @@ DATE=`date +%Y-%m-%d:%H:%M:%S`
 RESULTSFILE="./$LOGDIR/teragen_results_$DATE"
 
 
-OUTPUT=/data/sandbox/poc/teragen/${SIZE}-terasort-input
+OUTPUT=/tmp/${SIZE}-terasort-input
 
 # teragen.sh
 # Kill any running MapReduce jobs

@@ -7,14 +7,13 @@ trap "" HUP
 #   exit 1
 #fi
 
-#MR_EXAMPLES_JAR=/usr/hdp/2.3.2.0-2950/hadoop-mapreduce/hadoop-mapreduce-examples.jar
-MR_EXAMPLES_JAR=/usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar
+MR_EXAMPLES_JAR=/opt/cloudera/parcels/CDH/jars/hadoop-mapreduce-examples-2.6.0-cdh5.15.3-SNAPSHOT.jar
 
-#SIZE=500G
-#SIZE=100G
-SIZE=1T
-#SIZE=1G
-#SIZE=10G
+# SIZE=1T
+# SIZE=500G
+# SIZE=100G
+# SIZE=10G
+SIZE=1G
 
 
 LOGDIR=logs
@@ -29,8 +28,8 @@ DATE=`date +%Y-%m-%d:%H:%M:%S`
 RESULTSFILE="./$LOGDIR/teravalidate_results_$DATE"
 
 
-OUTPUT=/data/sandbox/poc/teragen/${SIZE}-terasort-output
-REPORT=/data/sandbox/poc/teragen/${SIZE}-terasort-report
+OUTPUT=/tmp/${SIZE}-terasort-output
+REPORT=/tmp/${SIZE}-terasort-report
 
 
 # teravalidate.sh
